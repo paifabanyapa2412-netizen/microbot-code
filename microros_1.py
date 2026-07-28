@@ -38,8 +38,8 @@ class RobotController(Node):
 
         # 4. ช่วง 8 - 10 วินาที (tick 81-100): หมุนเลี้ยวขวาอยู่กับที่
         elif self.ticks <= 100:
-            msg.linear.x = 0.0
-            msg.angular.z = -0.5  # ค่าเป็นลบ = เลี้ยวขวา
+            msg.linear.x = 0.15
+            msg.angular.z = -0.6  # ค่าเป็นลบ = เลี้ยวขวา
             self.get_logger().info('กำลังเลี้ยวขวา...')
 
         # 5. หลังจาก 10 วินาทีขึ้นไป: สั่งหยุดหุ่นยนต์
