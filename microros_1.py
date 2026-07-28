@@ -25,19 +25,19 @@ class RobotController(Node):
             self.get_logger().info('กำลังเดินหน้า...')
 
         # 2. ช่วง 3 - 6 วินาที (tick 31-60): ถอยหลัง
-        elif self.ticks <= 60:
-            msg.linear.x = -0.2
-            msg.angular.z = 0.0
-            self.get_logger().info('กำลังถอยหลัง...')
+        #elif self.ticks <= 60:
+        #    msg.linear.x = -0.2
+        #    msg.angular.z = 0.0
+        #    self.get_logger().info('กำลังถอยหลัง...')
 
         # 3. ช่วง 6 - 8 วินาที (tick 61-80): หมุนเลี้ยวซ้ายอยู่กับที่
-        elif self.ticks <= 80:
+        elif self.ticks <= 60:#80:
             msg.linear.x = 0.0
-            msg.angular.z = 1.0   # ค่าเป็นบวก = เลี้ยวซ้าย
+            msg.angular.z = 0.8   # ค่าเป็นบวก = เลี้ยวซ้าย
             self.get_logger().info('กำลังเลี้ยวซ้าย...')
 
         # 4. ช่วง 8 - 10 วินาที (tick 81-100): หมุนเลี้ยวขวาอยู่กับที่
-        elif self.ticks <= 100:
+        elif self.ticks <= 80:#100:
             msg.linear.x = 0.0
             msg.angular.z = -1.0  # ค่าเป็นลบ = เลี้ยวขวา
             self.get_logger().info('กำลังเลี้ยวขวา...')
