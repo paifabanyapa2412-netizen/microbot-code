@@ -7,7 +7,7 @@ class CubeDropper(Node):
         super().__init__('cube_dropper_node')
         
         # Publisher ส่งข้อมูลไปยัง /servo_s1
-        self.publisher_ = self.create_publisher(Int32, '/servo_s1', 10)
+        self.publisher_ = self.create_publisher(Int32, '/servo_s2', 10)
         
         self.CLOSE_ANGLE = 0    # องศาเดิม (ปิด/หนีบ)
         self.OPEN_ANGLE = 90    # องศาปล่อย (เปิด)
