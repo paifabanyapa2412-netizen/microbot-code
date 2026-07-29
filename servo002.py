@@ -15,7 +15,7 @@ class CubeDropper(Node):
         # ตัวแปรนับเวลา ( timer ทำงานทุกๆ 0.1 วินาที -> 10 ticks = 1 วินาที )
         self.ticks = 0
         self.timer = self.create_timer(0.1, self.timer_callback)
-        self.get_logger().info('เริ่มทำงาน: สั่งเปิด servo_s1 ไปที่ 90 องศา เป็นเวลา 3 วินาที...')
+        self.get_logger().info('เริ่มทำงาน: สั่งเปิด servo_s2 ไปที่ 90 องศา เป็นเวลา 3 วินาที...')
 
     def timer_callback(self):
         msg = Int32()
@@ -31,7 +31,7 @@ class CubeDropper(Node):
             msg.data = self.CLOSE_ANGLE
             self.publisher_.publish(msg)
             if self.ticks == 31:
-                self.get_logger().info('ครบ 3 วินาทีแล้ว! สั่ง servo_s1 หมุนกลับไปที่ 0 องศา')
+                self.get_logger().info('ครบ 3 วินาทีแล้ว! สั่ง servo_s2 หมุนกลับไปที่ 0 องศา')
 
         # เมื่อเสร็จสิ้นกระบวนการ ให้ปิด Node อัตโนมัติ
         else:
