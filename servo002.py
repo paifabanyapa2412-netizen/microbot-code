@@ -25,17 +25,17 @@ class CubeDropper(Node):
             pass 
 
         # 1.0 - 4.0 วินาที (tick 11-40): สั่งเปิดไปที่ 90 องศา (ค้างไว้ 3 วินาที)
-        elif self.ticks <= 40:
+        elif self.ticks <= 20:
             msg.data = self.OPEN_ANGLE
             self.publisher_.publish(msg)
             if self.ticks == 11:
                 self.get_logger().info('สั่งเปิด servo_s2 ไปที่ 70 องศา...')
 
         # 4.0 - 6.0 วินาที (tick 41-60): สั่งหมุนกลับมาที่ 0 องศา
-        elif self.ticks <= 60:
+        elif self.ticks <= 30:
             msg.data = self.CLOSE_ANGLE
             self.publisher_.publish(msg)
-            if self.ticks == 41:
+            if self.ticks == 21:
                 self.get_logger().info('ครบ 3 วินาทีแล้ว! สั่ง servo_s2 หมุนกลับไปที่ 0 องศา')
 
         # ปิด Node อัตโนมัติเมื่อเสร็จสิ้น
