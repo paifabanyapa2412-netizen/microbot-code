@@ -10,7 +10,7 @@ class CubeDropper(Node):
         self.publisher_ = self.create_publisher(Int32, '/servo_s2', 10)
         
         self.CLOSE_ANGLE = 0    # องศาเดิม (ปิด/หนีบ)
-        self.OPEN_ANGLE = 75    # องศาปล่อย (เปิด)
+        self.OPEN_ANGLE = 80    # องศาปล่อย (เปิด)
         
         self.ticks = 0
         self.timer = self.create_timer(0.1, self.timer_callback)
