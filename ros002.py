@@ -30,7 +30,7 @@ class RobotSequenceController(Node):
 
         # 4.0 - 6.0 วินาที (tick 41-60): 2. เลี้ยวซ้าย 2 วินาที (ความเร็ว 1.0)
         elif self.ticks <= 60:
-            move_msg.angular.z = 0.9  # เลี้ยวซ้ายความเร็ว 1.0
+            move_msg.angular.z = 1.0  # เลี้ยวซ้ายความเร็ว 1.0
             if self.ticks == 41:
                 self.get_logger().info('2. เลี้ยวซ้าย 2 วินาที (ความเร็ว 1.0)')
 
