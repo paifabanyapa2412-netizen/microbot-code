@@ -24,7 +24,7 @@ class TurnController(Node):
 
         # 1.0 - 3.0 วินาที (tick 11-30): เลี้ยวซ้าย 2 วินาที (ค่า angular.z เป็นบวก)
         elif self.ticks <= 30:
-            move_msg.angular.z = 0.5  # ความเร็วในการหมุนซ้าย
+            move_msg.angular.z = 1.0  # ความเร็วในการหมุนซ้าย
             if self.ticks == 11:
                 self.get_logger().info('<<< กำลังเลี้ยวซ้าย...')
 
@@ -36,7 +36,7 @@ class TurnController(Node):
 
         # 4.0 - 6.0 วินาที (tick 41-60): เลี้ยวขวา 2 วินาที (ค่า angular.z เป็นลบ)
         elif self.ticks <= 60:
-            move_msg.angular.z = -0.5 # ความเร็วในการหมุนขวา
+            move_msg.angular.z = -1.0 # ความเร็วในการหมุนขวา
             if self.ticks == 41:
                 self.get_logger().info('>>> กำลังเลี้ยวขวา...')
 
