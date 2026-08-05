@@ -61,7 +61,7 @@ class FullMissionController(Node):
 
         # 9.0 - 11.0 วินาที: 6. เลี้ยวซ้าย 2 วินาที (ปรับความเร็วเชิงมุมเป็นบวก)
         elif self.ticks <= 140:
-            move_msg.angular.z = 0.8
+            move_msg.angular.z = 0.9
             if self.ticks == 121:
                 self.get_logger().info('6. เลี้ยวซ้าย 2 วินาที')
 
