@@ -34,11 +34,17 @@ class FullMissionController(Node):
             if self.ticks == 11:
                 self.get_logger().info('1. เดินหน้า 3 วินาที')
 
-        # 4.0 - 6.0 วินาที: 2. เลี้ยวซ้าย 2 วินาที
+        # 4.0 - 6.0 วินาที: 2. เลี้ยวขวา 2 วินาที (ปรับจูนแบบ Ramping ค่อยๆ เร่งความเร็วชะลอการไถล)
         elif self.ticks <= 60:
-            move_msg.angular.z = 1.0
+            if self.ticks <= 43:       # 0.3 วินาทีแรก ค่อยๆ ออกตัว
+                move_msg.angular.z = -0.5
+            elif self.ticks <= 57:     # วิ่งความเร็วปกติ
+                move_msg.angular.z = -1.0
+            else:                      # 0.3 วินาทีสุดท้าย ค่อยๆ ชะลอก่อนหยุด
+                move_msg.angular.z = -0.5
+
             if self.ticks == 41:
-                self.get_logger().info('2. เลี้ยวซ้าย 2 วินาที')
+                self.get_logger().info('2. เลี้ยวขวา 2 วินาที (Ramping)')
 
         # 6.0 - 7.0 วินาที: 3. เดินหน้า 1 วินาที
         elif self.ticks <= 70:
