@@ -31,7 +31,7 @@ class FullMissionController(Node):
 
         # 1.0 - 4.0 วินาที: 1. เดินหน้า 3 วินาที
         elif self.ticks <= 40:
-            move_msg.linear.x = 0.4
+            move_msg.linear.x = 0.2
             if self.ticks == 11:
                 self.get_logger().info('1. เดินหน้า 3 วินาที')
 
@@ -43,7 +43,7 @@ class FullMissionController(Node):
 
         # 6.0 - 7.0 วินาที: 3. เดินหน้า 1 วินาที
         elif self.ticks <= 70:
-            move_msg.linear.x = 0.4
+            move_msg.linear.x = 0.2
             if self.ticks == 61:
                 self.get_logger().info('3. เดินหน้า 1 วินาที')
 
@@ -55,7 +55,7 @@ class FullMissionController(Node):
 
         # 8.0 - 9.0 วินาที: 5. ถอยหลัง 1 วินาที
         elif self.ticks <= 90:
-            move_msg.linear.x = -0.4
+            move_msg.linear.x = -0.2
             if self.ticks == 81:
                 self.get_logger().info('5. ถอยหลัง 1 วินาที')
 
@@ -67,7 +67,7 @@ class FullMissionController(Node):
 
         # 11.0 - 14.0 วินาที: 7. เดินตรง 3 วินาที
         elif self.ticks <= 140:
-            move_msg.linear.x = 0.4
+            move_msg.linear.x = 0.2
             if self.ticks == 111:
                 self.get_logger().info('7. เดินตรง 3 วินาที')
 
