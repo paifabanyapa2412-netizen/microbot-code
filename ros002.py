@@ -174,26 +174,72 @@ class FullMissionController(Node):
         
                         self.get_logger().info('10. เลี้ยวซ้าย 2 วินาที')
 
-        elif self.ticks <= 280:
+        elif self.ticks <= 290:
         
                     move_msg.linear.x = 0.2
         
                     if self.ticks == 261:
         
+                        self.get_logger().info('11. เดินตรง 3 วินาที')
+
+        elif self.ticks <= 295:
+
+            servo_msg.data = self.OPEN_ANGLE
+
+            if self.ticks == 291:
+
+                self.get_logger().info('4. ปล่อยลูกบาศก์!')
+
+        elif self.ticks <= 300:
+        
+                    servo_msg.data = self.CLOSE_ANGLE
+        
+                    if self.ticks == 296:
+        
+                        self.get_logger().info('4. ปล่อยลูกบาศก์!')
+
+        elif self.ticks <= 330:
+
+            move_msg.linear.x = -0.2
+
+            if self.ticks == 301:
+
+                self.get_logger().info('5. ถอยหลัง 3 วินาที').
+
+        elif self.ticks <= 350:
+        
+                    move_msg.angular.z = -0.9
+        
+                    if self.ticks == 331:
+        
+                        self.get_logger().info('8. เลี้ยวขวา 2 วินาที')
+
+        elif self.ticks <= 370:
+        
+                    move_msg.linear.x = 0.2
+        
+                    if self.ticks == 351:
+        
                         self.get_logger().info('11. เดินตรง 2 วินาที')
+
+      
+
+
+
+        
         
 
 
 
         # 14.0 - 15.0 วินาที: สั่งหยุดหุ่นยนต์ย้ำๆ 1 วินาที
 
-        elif self.ticks <= 290:
+        elif self.ticks <= 380:
 
             move_msg.linear.x = 0.0
 
             move_msg.angular.z = 0.0
 
-            if self.ticks == 281:
+            if self.ticks == 371:
 
                 self.get_logger().info('🛑 กำลังสั่งหยุดหุ่นยนต์...')
 
