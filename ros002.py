@@ -204,7 +204,7 @@ class FullMissionController(Node):
 
             if self.ticks == 301:
 
-                self.get_logger().info('5. ถอยหลัง 3 วินาที').
+                self.get_logger().info('5. ถอยหลัง 3 วินาที')
 
         elif self.ticks <= 350:
         
@@ -223,14 +223,6 @@ class FullMissionController(Node):
                         self.get_logger().info('11. เดินตรง 2 วินาที')
 
       
-
-
-
-        
-        
-
-
-
         # 14.0 - 15.0 วินาที: สั่งหยุดหุ่นยนต์ย้ำๆ 1 วินาที
 
         elif self.ticks <= 380:
