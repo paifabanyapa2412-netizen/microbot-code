@@ -222,6 +222,14 @@ class FullMissionController(Node):
         
                         self.get_logger().info('16. เดินตรง 1 วินาที')
 
+        elif self.ticks <= 380:
+                
+                            move_msg.angular.z = 0.9
+                
+                            if self.ticks == 361:
+                
+                                self.get_logger().info('17. เลี้ยวซ้าย 2 วินาที')
+
       
         # 14.0 - 15.0 วินาที: สั่งหยุดหุ่นยนต์ย้ำๆ 1 วินาที
 
