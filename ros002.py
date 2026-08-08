@@ -48,15 +48,15 @@ class FullMissionController(Node):
                 self.get_logger().info('3. เดินหน้า 1 วินาที')
 
         # 7.0 - 8.0 วินาที: 4. ปล่อยลูกบาศก์ (ครั้งที่ 1)
-        elif self.ticks <= 75:
-            servo_msg.data = self.OPEN_ANGLE
-            if self.ticks == 71:
-                self.get_logger().info('4. ปล่อยลูกบาศก์ 1(รอบแรก)!เปิด')
+        # elif self.ticks <= 75:
+        #     servo_msg.data = self.OPEN_ANGLE
+        #     if self.ticks == 71:
+        #         self.get_logger().info('4. ปล่อยลูกบาศก์ 1(รอบแรก)!เปิด')
 
-        elif self.ticks <= 80:
-            servo_msg.data = self.CLOSE_ANGLE
-            if self.ticks == 76:
-                        self.get_logger().info('4. ปล่อยลูกบาศก์ 1(รอบแรก)!ปิด')
+        # elif self.ticks <= 80:
+        #     servo_msg.data = self.CLOSE_ANGLE
+        #     if self.ticks == 76:
+        #                 self.get_logger().info('4. ปล่อยลูกบาศก์ 1(รอบแรก)!ปิด')
 
         # elif self.ticks <= 85:
         #     servo_msg.data = self.OPEN_ANGLE
