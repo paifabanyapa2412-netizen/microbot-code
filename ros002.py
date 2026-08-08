@@ -81,17 +81,17 @@ class FullMissionController(Node):
                 self.get_logger().info('6. เลี้ยวซ้าย 2 วินาที')
 
         # 11.0 - 14.0 วินาที: 7. เดินตรง 3 วินาที
-        elif self.ticks <= 140:
+        elif self.ticks <= 160:
             move_msg.linear.x = 0.2
             if self.ticks == 111:
-                self.get_logger().info('7. เดินตรง 3 วินาที')
+                self.get_logger().info('7. เดินตรง 4 วินาที')
 
         # --- ส่วนที่เพิ่มใหม่ตามคำสั่ง ---
 
         # 14.0 - 16.0 วินาที: 8. เลี้ยวขวา 2 วินาที
-        elif self.ticks <= 160:
+        elif self.ticks <= 180:
             move_msg.angular.z = -0.9
-            if self.ticks == 141:
+            if self.ticks == 161:
                 self.get_logger().info('8. เลี้ยวขวา 2 วินาที')
 
         # 16.0 - 17.0 วินาที: 9. เดินตรง 1 วินาที
