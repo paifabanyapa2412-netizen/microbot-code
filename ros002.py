@@ -223,7 +223,7 @@ class FullMissionController(Node):
                 self.get_logger().info('2. เลี้ยวขวา 2 วินาที')
 
         elif self.ticks <= 460:
-            move_msg.linear.x = -0.2
+            move_msg.linear.x = 0.2
             if self.ticks == 451:
                 self.get_logger().info('5. ตรง 1 วินาที')
 
