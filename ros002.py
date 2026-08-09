@@ -101,9 +101,9 @@ class FullMissionController(Node):
 
         # 9.0 - 11.0 วินาที: 6. เลี้ยวซ้าย 2 วินาที
         elif self.ticks <= 150:
-            move_msg.angular.z = 0.9
+            move_msg.angular.z = -0.9
             if self.ticks == 131:
-                self.get_logger().info('6. เลี้ยวซ้าย 2 วินาที')
+                self.get_logger().info('6. เลี้ยวขวา 2 วินาที')
 
         # 11.0 - 14.0 วินาที: 7. เดินตรง 3 วินาที
         elif self.ticks <= 190:
@@ -114,98 +114,98 @@ class FullMissionController(Node):
         # --- ส่วนที่เพิ่มใหม่ตามคำสั่ง ---
 
         # 14.0 - 16.0 วินาที: 8. เลี้ยวขวา 2 วินาที
-        elif self.ticks <= 210:
-            move_msg.angular.z = -0.9
-            if self.ticks == 191:
-                self.get_logger().info('8. เลี้ยวขวา 2 วินาที')
+        # elif self.ticks <= 210:
+        #     move_msg.angular.z = -0.9
+        #     if self.ticks == 191:
+        #         self.get_logger().info('8. เลี้ยวขวา 2 วินาที')
 
-        # 16.0 - 17.0 วินาที: 9. เดินตรง 1 วินาที
-        elif self.ticks <= 230:
-            move_msg.linear.x = 0.2
-            if self.ticks == 211:
-                self.get_logger().info('9. เดินตรง 2 วินาที')
+        # # 16.0 - 17.0 วินาที: 9. เดินตรง 1 วินาที
+        # elif self.ticks <= 230:
+        #     move_msg.linear.x = 0.2
+        #     if self.ticks == 211:
+        #         self.get_logger().info('9. เดินตรง 2 วินาที')
 
-        # 17.0 - 19.0 วินาที: 10. เลี้ยวซ้าย 2 วินาที
-        elif self.ticks <= 250:
-            move_msg.angular.z = 0.9
-            if self.ticks == 231:
-                self.get_logger().info('10. เลี้ยวซ้าย 2 วินาที')
+        # # 17.0 - 19.0 วินาที: 10. เลี้ยวซ้าย 2 วินาที
+        # elif self.ticks <= 250:
+        #     move_msg.angular.z = 0.9
+        #     if self.ticks == 231:
+        #         self.get_logger().info('10. เลี้ยวซ้าย 2 วินาที')
 
-        elif self.ticks <= 260:
-            move_msg.linear.x = 0.2
-            if self.ticks == 251:
-                self.get_logger().info('9. เดินตรง 1 วินาที')
+        # elif self.ticks <= 260:
+        #     move_msg.linear.x = 0.2
+        #     if self.ticks == 251:
+        #         self.get_logger().info('9. เดินตรง 1 วินาที')
 
-        # 19.0 - 20.0 วินาที: 11. ปล่อยลูกบาศก์ (ครั้งที่ 2)
-        elif self.ticks <= 265:
-            servo_msg.data = self.OPEN_ANGLE
-            if self.ticks == 261:
-                self.get_logger().info('11. ปล่อยลูกบาศก์ 1(รอบสอง)!')
+        # # 19.0 - 20.0 วินาที: 11. ปล่อยลูกบาศก์ (ครั้งที่ 2)
+        # elif self.ticks <= 265:
+        #     servo_msg.data = self.OPEN_ANGLE
+        #     if self.ticks == 261:
+        #         self.get_logger().info('11. ปล่อยลูกบาศก์ 1(รอบสอง)!')
 
-        elif self.ticks <= 270:
-            servo_msg.data = self.CLOSE_ANGLE
-            if self.ticks == 266:
-                self.get_logger().info('11. ปล่อยลูกบาศก์ 1(รอบสอง)!')
+        # elif self.ticks <= 270:
+        #     servo_msg.data = self.CLOSE_ANGLE
+        #     if self.ticks == 266:
+        #         self.get_logger().info('11. ปล่อยลูกบาศก์ 1(รอบสอง)!')
 
-        elif self.ticks <= 275:
-            servo_msg.data = self.OPEN_ANGLE
-            if self.ticks == 271:
-                self.get_logger().info('11. ปล่อยลูกบาศก์ 2(รอบสอง)!')
+        # elif self.ticks <= 275:
+        #     servo_msg.data = self.OPEN_ANGLE
+        #     if self.ticks == 271:
+        #         self.get_logger().info('11. ปล่อยลูกบาศก์ 2(รอบสอง)!')
         
-        elif self.ticks <= 280:
-            servo_msg.data = self.CLOSE_ANGLE
-            if self.ticks == 276:
-                self.get_logger().info('11. ปล่อยลูกบาศก์ 2(รอบสอง)!')
+        # elif self.ticks <= 280:
+        #     servo_msg.data = self.CLOSE_ANGLE
+        #     if self.ticks == 276:
+        #         self.get_logger().info('11. ปล่อยลูกบาศก์ 2(รอบสอง)!')
 
-        elif self.ticks <= 285:
-            servo_msg.data = self.OPEN_ANGLE
-            if self.ticks == 281:
-                self.get_logger().info('11. ปล่อยลูกบาศก์ 3(รอบสอง)!')
+        # elif self.ticks <= 285:
+        #     servo_msg.data = self.OPEN_ANGLE
+        #     if self.ticks == 281:
+        #         self.get_logger().info('11. ปล่อยลูกบาศก์ 3(รอบสอง)!')
 
-        elif self.ticks <= 290:
-            servo_msg.data = self.CLOSE_ANGLE
-            if self.ticks == 286:
-                self.get_logger().info('11. ปล่อยลูกบาศก์ 3(รอบสอง)!')
+        # elif self.ticks <= 290:
+        #     servo_msg.data = self.CLOSE_ANGLE
+        #     if self.ticks == 286:
+        #         self.get_logger().info('11. ปล่อยลูกบาศก์ 3(รอบสอง)!')
 
-        elif self.ticks <= 295:
-            servo_msg.data = self.OPEN_ANGLE
-            if self.ticks == 291:
-                self.get_logger().info('11. ปล่อยลูกบาศก์ 4(รอบสอง)!')
+        # elif self.ticks <= 295:
+        #     servo_msg.data = self.OPEN_ANGLE
+        #     if self.ticks == 291:
+        #         self.get_logger().info('11. ปล่อยลูกบาศก์ 4(รอบสอง)!')
         
-        elif self.ticks <= 300:
-            servo_msg.data = self.CLOSE_ANGLE
-            if self.ticks == 296:
-                self.get_logger().info('11. ปล่อยลูกบาศก์ 4(รอบสอง)!')
+        # elif self.ticks <= 300:
+        #     servo_msg.data = self.CLOSE_ANGLE
+        #     if self.ticks == 296:
+        #         self.get_logger().info('11. ปล่อยลูกบาศก์ 4(รอบสอง)!')
 
-        elif self.ticks <= 310:
-            move_msg.linear.x = 0.0
-            if self.ticks == 301:
-                self.get_logger().info('9. หยุด')
+        # elif self.ticks <= 310:
+        #     move_msg.linear.x = 0.0
+        #     if self.ticks == 301:
+        #         self.get_logger().info('9. หยุด')
 
-        elif self.ticks <= 320:
-            move_msg.linear.x = -0.2
-            if self.ticks == 311:
-                self.get_logger().info('5. ถอยหลัง 1 วินาที')
+        # elif self.ticks <= 320:
+        #     move_msg.linear.x = -0.2
+        #     if self.ticks == 311:
+        #         self.get_logger().info('5. ถอยหลัง 1 วินาที')
 
-        elif self.ticks <= 340:
-            move_msg.angular.z = 0.9
-            if self.ticks == 321:
-                self.get_logger().info('10. เลี้ยวซ้าย 2 วินาที')
+        # elif self.ticks <= 340:
+        #     move_msg.angular.z = 0.9
+        #     if self.ticks == 321:
+        #         self.get_logger().info('10. เลี้ยวซ้าย 2 วินาที')
 
-        elif self.ticks <= 360:
-            move_msg.linear.x = 0.2
-            if self.ticks == 341:
-                self.get_logger().info('9. เดินตรง 2 วินาที')
+        # elif self.ticks <= 360:
+        #     move_msg.linear.x = 0.2
+        #     if self.ticks == 341:
+        #         self.get_logger().info('9. เดินตรง 2 วินาที')
 
-        elif self.ticks <= 370:
-            move_msg.angular.z = 0.9
-            if self.ticks == 361:
-                self.get_logger().info('10. เลี้ยวซ้าย 2 วินาที')
+        # elif self.ticks <= 370:
+        #     move_msg.angular.z = 0.9
+        #     if self.ticks == 361:
+        #         self.get_logger().info('10. เลี้ยวซ้าย 2 วินาที')
 
-        elif self.ticks <= 420:
-            move_msg.linear.x = 0.2
-            if self.ticks == 371:
-                self.get_logger().info('5. ตรง 5 วินาที')
+        # elif self.ticks <= 420:
+        #     move_msg.linear.x = 0.2
+        #     if self.ticks == 371:
+        #         self.get_logger().info('5. ตรง 5 วินาที')
 
         # elif self.ticks <= 350:
         #     move_msg.angular.z = -0.9
@@ -470,10 +470,10 @@ class FullMissionController(Node):
         
 
     # 20.0 - 21.0 วินาที: สั่งหยุดหุ่นยนต์ย้ำๆ 1 วินาที
-        elif self.ticks <= 430:
+        elif self.ticks <= 200:
             move_msg.linear.x = 0.0
             move_msg.angular.z = 0.0
-            if self.ticks == 421:
+            if self.ticks == 291:
                 self.get_logger().info('🛑 กำลังสั่งหยุดหุ่นยนต์...')
 
         # หลัง 21 วินาที: จบการทำงาน
