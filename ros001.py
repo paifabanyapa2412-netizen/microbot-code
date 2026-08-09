@@ -101,7 +101,7 @@ class FullMissionController(Node):
                 self.get_logger().info('9. หยุด')
 
         elif self.ticks <= 270:
-            move_msg.linear.x = 0.2
+            move_msg.linear.x = -0.2
             if self.ticks == 261:
                 self.get_logger().info('1. ถอย 1 วินาที')
 
