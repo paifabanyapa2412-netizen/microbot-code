@@ -58,35 +58,35 @@ class FullMissionController(Node):
             if self.ticks == 76:
                         self.get_logger().info('4. ปล่อยลูกบาศก์ 1(รอบแรก)!ปิด')
 
-        elif self.ticks <= 85:
-            servo_msg.data = self.OPEN_ANGLE
-            if self.ticks == 81:
-                self.get_logger().info('4. ปล่อยลูกบาศก์ 2(รอบแรก)!เปิด')
+        # elif self.ticks <= 85:
+        #     servo_msg.data = self.OPEN_ANGLE
+        #     if self.ticks == 81:
+        #         self.get_logger().info('4. ปล่อยลูกบาศก์ 2(รอบแรก)!เปิด')
 
-        elif self.ticks <= 90:
-            servo_msg.data = self.CLOSE_ANGLE
-            if self.ticks == 86:
-                        self.get_logger().info('4. ปล่อยลูกบาศก์ 2(รอบแรก)!ปิด')
+        # elif self.ticks <= 90:
+        #     servo_msg.data = self.CLOSE_ANGLE
+        #     if self.ticks == 86:
+        #                 self.get_logger().info('4. ปล่อยลูกบาศก์ 2(รอบแรก)!ปิด')
 
-        elif self.ticks <= 95:
-            servo_msg.data = self.OPEN_ANGLE
-            if self.ticks == 91:
-                self.get_logger().info('4. ปล่อยลูกบาศก์ 3(รอบแรก)!เปิด')
+        # elif self.ticks <= 95:
+        #     servo_msg.data = self.OPEN_ANGLE
+        #     if self.ticks == 91:
+        #         self.get_logger().info('4. ปล่อยลูกบาศก์ 3(รอบแรก)!เปิด')
 
-        elif self.ticks <= 100:
-            servo_msg.data = self.CLOSE_ANGLE
-            if self.ticks == 96:
-                        self.get_logger().info('4. ปล่อยลูกบาศก์ 3(รอบแรก)!ปิด')
+        # elif self.ticks <= 100:
+        #     servo_msg.data = self.CLOSE_ANGLE
+        #     if self.ticks == 96:
+        #                 self.get_logger().info('4. ปล่อยลูกบาศก์ 3(รอบแรก)!ปิด')
 
-        elif self.ticks <= 105:
-            servo_msg.data = self.OPEN_ANGLE
-            if self.ticks == 101:
-                self.get_logger().info('4. ปล่อยลูกบาศก์ 4(รอบแรก)!เปิด')
+        # elif self.ticks <= 105:
+        #     servo_msg.data = self.OPEN_ANGLE
+        #     if self.ticks == 101:
+        #         self.get_logger().info('4. ปล่อยลูกบาศก์ 4(รอบแรก)!เปิด')
 
-        elif self.ticks <= 110:
-            servo_msg.data = self.CLOSE_ANGLE
-            if self.ticks == 106:
-                        self.get_logger().info('4. ปล่อยลูกบาศก์ 4(รอบแรก)!ปิด')
+        # elif self.ticks <= 110:
+        #     servo_msg.data = self.CLOSE_ANGLE
+        #     if self.ticks == 106:
+        #                 self.get_logger().info('4. ปล่อยลูกบาศก์ 4(รอบแรก)!ปิด')
 
         elif self.ticks <= 120:
             move_msg.linear.x = 0.0
